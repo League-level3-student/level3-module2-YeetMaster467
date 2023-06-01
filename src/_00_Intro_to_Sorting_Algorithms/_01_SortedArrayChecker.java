@@ -8,9 +8,16 @@ public class _01_SortedArrayChecker {
      * The method returns true if the integer array is in ascending order
      * and false otherwise.
      */
-    public static boolean intArraySorted(int[] arr) {
+ 
+	public static boolean intArraySorted(int[] arr) {
         
-        return false;
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (arr[i] > arr[i + 1]) {
+				return false;
+			} 
+		}
+		
+		return true;
     }
 
     /*
@@ -20,6 +27,17 @@ public class _01_SortedArrayChecker {
      * The method returns true if the double array is in ascending order
      * and false otherwise.
      */
+	
+	public static boolean doubleArraySorted (double[] arr) {
+		
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (arr[i] > arr[i + 1]) {
+				return false;
+			} 
+		}
+		
+		return true;
+	}
 
 
     /*
@@ -30,7 +48,19 @@ public class _01_SortedArrayChecker {
      * order and false otherwise (You can compare characters just like
      * integers).
      */
-
+	
+	public static boolean charArraySorted(char[] arr) {
+		
+		for (int i = 0; i < arr.length - 1; i++) {
+			char current = Character.toLowerCase(arr[i]);
+			char next = Character.toLowerCase(arr[i + 1]);
+			if (current > next) {
+				return false;
+			} 
+		}
+		
+		return true;
+	}
 
     /*
      * 4. Write a static method called stringArraySorted.
@@ -39,5 +69,16 @@ public class _01_SortedArrayChecker {
      *  The method returns true if the String array is in alphabetical
      *  order and false otherwise (Use the compareTo(String) method).
      */
+	
+	public static boolean stringArraySorted(String[] arr) {
+		
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (arr[i].compareTo(arr[i + 1]) == -1) {
+				return false;
+			} 
+		}
+		
+		return true;
+	}
 
 }
