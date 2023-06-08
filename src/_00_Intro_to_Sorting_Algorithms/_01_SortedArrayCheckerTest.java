@@ -36,13 +36,13 @@ public class _01_SortedArrayCheckerTest {
         assertFalse(_01_SortedArrayChecker.charArraySorted(unsorted));
         assertTrue(_01_SortedArrayChecker.charArraySorted(sorted));
     }
-//
-//    @Test
-//    public void stringArraySortTest() {
-//        String[] unsorted = {"carrot", "pineapple", "mango", "pear"};
-//        String[] sorted = {"apple", "banana", "carrot", "grape"};
-//
-//        assertFalse(_01_SortedArrayChecker.stringArraySorted(unsorted));
-//        assertTrue(_01_SortedArrayChecker.stringArraySorted(sorted));
-//    }
+
+    @Test
+    public void stringArraySortTest() {
+        String[] unsorted = {"carrot", "pineapple", "mango", "pear"};
+        String[] sorted = {"apple", "banana", "carrot", "grape"};
+
+        assertFalse(_01_SortedArrayChecker.stringArraySorted(unsorted));
+        assertTrue(_01_SortedArrayChecker.stringArraySorted(sorted));
+    }
 }
