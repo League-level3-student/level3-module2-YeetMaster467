@@ -8,10 +8,82 @@ import java.util.List;
 public class Algorithms {
     
     public static String multiply(int num1, int num2) {
-        return null;
+        return num1 + " x " + num2 + " = " + (num1 * num2);
     }
     
     public static int findBrokenEgg(List<String> eggs) {
-        return 0;
+
+    	for (int i = 0; i < eggs.size(); i++) {
+    		if (eggs.get(i) == "cracked") {
+    			return i;
+    		}
+    	}
+
+        return -1;
     }
+    
+    public static boolean isPrime(int num) {
+		
+		for (int i = 2; i < num; i++) {
+			if (num % i == 0) {
+				return false;
+			}
+		}
+    	
+    	return true;
+    }
+    
+    public static boolean isSquare(int num) {
+		
+    	for (int i = 1; i <= num; i++) {
+			if (num == i*i) {
+				return true;
+			}
+		}
+    	
+    	return false;
+    }
+    
+    public static boolean isCube(int num) {
+    	for (int i = 1; i <= num; i++) {
+			if (num == i*i*i) {
+				return true;
+			}
+		}
+    	
+    	return false;
+    }
+    
+    public static int countPearls(List<Boolean> oysters) {
+		int pearls = 0;
+    	for (int i = 0; i < oysters.size(); i++) {
+			if (oysters.get(i) == true) {
+				pearls++;
+			}
+		}
+    	
+    	return pearls;
+    	
+    }
+    
+    public double findTallest(List<Double> arr) {
+    	for (int i = 0; i < arr.size(); i++) {
+            
+            // This for loop puts one value in the correct position
+            for (int k = 0; k < arr.size(); - 1; k++) {
+                
+                // If the current element is bigger than the next...
+                if(	arr.get(k) > arr.get(k + 1) ) {
+                    
+                    // Swap elements at k and k+1
+                    double temp = arr.get(k);
+                    // arr.get(k) = arr.get(k + 1);
+                    arr.add(k, (double) (k + 1));
+                    arr.add(k + 1, temp);
+                }
+            }
+        }
+    	return 0;
+    }
+    
 }
