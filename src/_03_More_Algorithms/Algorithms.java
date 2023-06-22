@@ -67,23 +67,7 @@ public class Algorithms {
     }
     
     public double findTallest(List<Double> arr) {
-    	for (int i = 0; i < arr.size(); i++) {
-            
-            // This for loop puts one value in the correct position
-            for (int k = 0; k < arr.size(); - 1; k++) {
-                
-                // If the current element is bigger than the next...
-                if(	arr.get(k) > arr.get(k + 1) ) {
-                    
-                    // Swap elements at k and k+1
-                    double temp = arr.get(k);
-                    // arr.get(k) = arr.get(k + 1);
-                    arr.add(k, (double) (k + 1));
-                    arr.add(k + 1, temp);
-                }
-            }
-        }
-    	return 0;
+    	
     }
     
 }
