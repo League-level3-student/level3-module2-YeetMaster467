@@ -66,8 +66,29 @@ public class Algorithms {
     	
     }
     
-    public double findTallest(List<Double> arr) {
+    public static double findTallest(List<Double> arr) {
+    	double tallest = arr.get(0);
     	
+    	for (Double i : arr) {
+			if (i > tallest) {
+				tallest = i;
+			}
+		}
+    	
+    	return tallest;
+    	
+    }
+    
+    public static String findLongestWord(List<String> words) {
+    	String longest = words.get(0);
+    	
+    	for (String i : words) {
+			if (i.chars().count() < longest.chars().count()) {
+				longest = i;
+			}
+		}
+    	
+    	return longest;
     }
     
 }
