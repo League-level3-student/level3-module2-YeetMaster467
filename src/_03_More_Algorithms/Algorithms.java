@@ -1,6 +1,9 @@
 package _03_More_Algorithms;
 
+import java.util.Collections;
 import java.util.List;
+
+import _01_Sorting_Algorithms.SortingVisualizer;
 
 /*
  * Write your methods in this class
@@ -83,7 +86,7 @@ public class Algorithms {
     	String longest = words.get(0);
     	
     	for (String i : words) {
-			if (i.chars().count() < longest.chars().count()) {
+			if (i.chars().count() > longest.chars().count()) {
 				longest = i;
 			}
 		}
@@ -91,4 +94,61 @@ public class Algorithms {
     	return longest;
     }
     
+    public static boolean containsSOS(List<String> message) {
+    	for (int i = 0; i < message.size(); i++) {
+			if (message.get(i).contains("... --- ...")) {
+				return true;
+			}
+		}
+    	return false;
+    }
+    
+    public static List<Double> sortScores(List<Double> scores) {
+    	
+    	int size = scores.size();
+    	quickSort(scores, 0, size - 1);
+    	
+    	List<Double> results = scores;
+    	return results;
+    	
+    }
+    
+    private static void quickSort(List<Double> list, int low, int high) {
+       
+        int i = low;
+        int j = high;
+       
+        
+        double pivot = list.get(low + (high - low) / 2); 
+
+        
+        while (i <= j) {
+            
+            while (list.get(i) < pivot) {
+                i++;
+            }
+            
+            while (list.get(j) > pivot) {
+                j--;
+            }
+            
+            if (i <= j) {
+                
+            	Collections.swap(list, i, j);
+    
+                i++;
+                j--;
+            }
+        }
+        
+        
+        if (low < j){
+            quickSort(list, low, j);
+        }
+        
+        
+        if (i < high){
+            quickSort(list, i, high);
+        }
+    }
 }
