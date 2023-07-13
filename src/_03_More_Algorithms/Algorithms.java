@@ -3,8 +3,6 @@ package _03_More_Algorithms;
 import java.util.Collections;
 import java.util.List;
 
-import _01_Sorting_Algorithms.SortingVisualizer;
-
 /*
  * Write your methods in this class
  */
@@ -112,6 +110,36 @@ public class Algorithms {
     	return results;
     	
     }
+    
+    public static List<String> sortDNA(List<String> sequences) {
+    	
+    	for(int i = 0; i < sequences.size(); i++) {
+    		for (int j = i + 1; j < sequences.size(); j++) {
+    			if (sequences.get(i).length() > sequences.get(j).length()) {
+    				String temp = sequences.get(j);
+    				sequences.set(j, sequences.get(i));
+    				sequences.set(i, temp);
+    			}
+    		}
+    	}
+    	
+    	return sequences;
+    }
+    
+    public static List<String> sortWords (List<String> words) {
+    	for (int i = 0; i < words.size(); i++) {
+    		for (int j = i + 1; j < words.size(); j++) {
+    			if (words.get(i).compareTo(words.get(j)) > 0) {
+    				String temp = words.get(j);
+    				words.set(j, words.get(i));
+    				words.set(i, temp);
+    			}
+    		}
+    	}
+    	
+    	return words;
+    }
+    
     
     private static void quickSort(List<Double> list, int low, int high) {
        
